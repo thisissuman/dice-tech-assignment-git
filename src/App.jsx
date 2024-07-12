@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Search from "./components/Search";
 import RepoCard from "./components/RepoCard";
 import Sort from "./components/Sort";
@@ -15,15 +15,19 @@ const App = () => {
     const data = await response.json();
     setRepos(data.items);
   };
+  /* useEffect(() => {
+    console.log("use effect called");
+  }, [repos]); */
 
   const handleSearch = (query) => {
     fetchRepos(query);
   };
 
   const handleSortChange = (sort) => {
-    console.log(query);
+    console.log(sort);
     setSortOption(sort);
-    fetchRepos(query);
+
+    // fetchRepos(query);
   };
 
   return (
@@ -34,7 +38,7 @@ const App = () => {
         {repos.map((repo) => (
           <RepoCard key={repo.id} repo={repo} />
         ))}
-        {repos.length > 0 ? "" : <p>Please enter some input</p>}
+        {repos.length > 0 ? "" : <p style={{paddingTop:"50px"}}>Please enter some input</p>}
       </div>
     </div>
   );

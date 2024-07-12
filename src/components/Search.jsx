@@ -8,11 +8,13 @@ const Search = ({ onSearch, sortOption }) => {
     onSearch(query);
   };
 
-  useEffect(() => {
+   useEffect(() => {
+    console.log(query.length)
     if (query.length > 0) {
       onSearch(query);
+      console.log("use")
     }
-  }, [sortOption]);
+  }, [sortOption]); 
 
   return (
     <div>
