@@ -1,4 +1,3 @@
-// src/components/Sort.js
 import React from "react";
 
 const Sort = ({ onSortChange }) => {

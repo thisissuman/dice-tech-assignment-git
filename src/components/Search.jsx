@@ -1,4 +1,3 @@
-// src/components/Search.js
 import React, { useEffect } from "react";
 
 const Search = ({ onSearch, sortOption }) => {
