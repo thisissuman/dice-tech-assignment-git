@@ -1,12 +1,18 @@
 // src/components/Search.js
-import React from "react";
+import React, { useEffect } from "react";
 
-const Search = ({ onSearch }) => {
+const Search = ({ onSearch, sortOption }) => {
   const [query, setQuery] = React.useState("");
 
   const handleSearch = () => {
     onSearch(query);
   };
+
+  useEffect(() => {
+    if (query.length > 0) {
+      onSearch(query);
+    }
+  }, [sortOption]);
 
   return (
     <div>

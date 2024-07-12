@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "./components/Search";
 import RepoCard from "./components/RepoCard";
 import Sort from "./components/Sort";
@@ -21,18 +21,20 @@ const App = () => {
   };
 
   const handleSortChange = (sort) => {
+    console.log(query);
     setSortOption(sort);
     fetchRepos(query);
   };
 
   return (
     <div className="App">
-      <Search onSearch={handleSearch} />
+      <Search onSearch={handleSearch} sortOption={sortOption} />
       <Sort onSortChange={handleSortChange} />
       <div className="repo-list">
         {repos.map((repo) => (
           <RepoCard key={repo.id} repo={repo} />
         ))}
+        {repos.length > 0 ? "" : <p>Please enter some input</p>}
       </div>
     </div>
   );
