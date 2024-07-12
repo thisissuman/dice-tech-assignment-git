@@ -3,12 +3,14 @@ import React from 'react';
 const RepoCard = ({ repo }) => {
   return (
     <div className="repo-card">
-      <img src={repo.owner.avatar_url} alt="avatar" />
+    <img src={repo.owner.avatar_url} alt="avatar" />
+    <div className="repo-card-content">
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
-      <p>⭐ Stars: {repo.stargazers_count}</p>
+      <p className="stars">⭐ Stars: {repo.stargazers_count}</p>
       <p>Language: {repo.language}</p>
     </div>
+  </div>
   );
 };
 

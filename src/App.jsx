@@ -37,7 +37,7 @@ const App = () => {
         {repos.map((repo) => (
           <RepoCard key={repo.id} repo={repo} />
         ))}
-        {repos.length > 0 ? "" : <p style={{paddingTop:"50px"}}>Please enter some input</p>}
+        {repos.length > 0 ? "" : <p className="no-input-message">Please enter some input</p>}
       </div>
     </div>
   );
